@@ -164,8 +164,8 @@
         <tr v-for="usuario in usuarios"
             v-bind:key="usuario._id">
           <td>
-            <span v-if="usuario.tipo_usuario === '0'">Pessoa Juridica</span>
-            <span v-if="usuario.tipo_usuario === '1'">Pessoa Física</span>
+            <span v-if="usuario.tipo_usuario === '1'">Pessoa Juridica</span>
+            <span v-if="usuario.tipo_usuario === '0'">Pessoa Física</span>
           </td>
           <td>{{usuario.nome}}</td>
           <td>{{usuario.sexo}}</td>
