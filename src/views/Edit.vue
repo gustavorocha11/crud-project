@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row mt-2">
     <div class="card w-100">
-      <h1 class="text-center">FAÇA SEU CADASTRO</h1>
+      <h1 class="text-center">EDITE SEU CADASTRO</h1>
       <b-form class="row" @submit="enviaFormulario" @reset="resetarForm">
         <b-form-group label="Tipo de pessoa:" class="col-3">
           <b-form-select
@@ -140,52 +140,11 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group class="col-6">
-          <b-button type="submit" variant="primary" class="w-100">Cadastrar</b-button>
+        <b-form-group class="col-12">
+          <b-button type="submit" variant="primary" class="w-100">Editar</b-button>
         </b-form-group>
-        <b-form-group class="col-6">
-          <b-button type="reset" variant="danger" class="w-100">Resetar Formulario</b-button>
-        </b-form-group>
-
       </b-form>
     </div>
-  </div>
-  <div class="row mt-2">
-    <table class="table">
-      <thead>
-        <th>Tipo de pessoa</th>
-        <th>Nome</th>
-        <th>Sexo</th>
-        <th>E-mail</th>
-        <th>Celular</th>
-        <th class="text-right">Ações</th>
-      </thead>
-      <tbody>
-        <tr v-for="usuario in usuarios"
-            v-bind:key="usuario._id">
-          <td>
-            <span v-if="usuario.tipo_usuario === '0'">Pessoa Juridica</span>
-            <span v-if="usuario.tipo_usuario === '1'">Pessoa Física</span>
-          </td>
-          <td>{{usuario.nome}}</td>
-          <td>{{usuario.sexo}}</td>
-          <td>{{usuario.email}}</td>
-          <td>{{usuario.celular}}</td>
-          <td class="text-right">
-            <b-button variant="danger" @click="deletarUsuario(usuario._id)">
-              <b-icon icon="trash"></b-icon>
-              Deletar
-            </b-button>
-
-            <router-link :to="'/editar/'+usuario._id" class="btn btn-warning ml-2">
-              <b-icon icon="pencil"></b-icon>
-              Editar
-            </router-link>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
   </div>
 </div>
 </template>
@@ -197,13 +156,13 @@ import axios from 'axios';
 import _ from 'lodash';
 
 export default {
-  name: 'Home',
+  name: 'Edit',
   components: {
   },
   data() {
     return {
-      usuarios: [],
       form: {
+        _id: '',
         tipo_usuario: null,
         nome: '',
         razao_social: '',
@@ -242,27 +201,30 @@ export default {
     }, 500),
     enviaFormulario(event) {
       event.preventDefault();
+      const { id } = this.$route.params;
       axios({
-        method: 'post',
-        url: 'https://jsonbox.io/box_749478552ad9adebbca9',
+        method: 'put',
+        url: `https://jsonbox.io/box_749478552ad9adebbca9/${id}`,
         data: {
           ...this.form,
         },
       })
         .then((response) => {
           if (response.status === 200) {
-            this.usuarios.push(response.data);
-            this.resetarForm(event);
+            this.$router.push({ name: 'Home' });
           }
         });
     },
     buscaUsuarios() {
+      const { id } = this.$route.params;
       axios({
         method: 'get',
-        url: 'https://jsonbox.io/box_749478552ad9adebbca9',
+        url: `https://jsonbox.io/box_749478552ad9adebbca9/${id}`,
       })
         .then((response) => {
-          this.usuarios = response.data;
+          if (response.status === 200) {
+            this.form = response.data;
+          }
         });
     },
     resetarForm(event = null) {
@@ -289,28 +251,9 @@ export default {
         },
       };
     },
-    deletarUsuario(id) {
-      axios({
-        method: 'delete',
-        url: `https://jsonbox.io/box_749478552ad9adebbca9/${id}`,
-      })
-        .then((response) => {
-          if (response.status === 200 && response.data.message === 'Record removed.') {
-            // eslint-disable-next-line no-underscore-dangle
-            const usuarioIndex = this.usuarios.findIndex((usuario) => usuario._id === id);
-            this.usuarios.splice(usuarioIndex, 1);
-          }
-        });
-    },
   },
   mounted() {
     this.buscaUsuarios();
   },
 };
 </script>
-
-<style lang="scss" scoped>
-  .card{
-    padding: 20px;
-  }
-</style>
