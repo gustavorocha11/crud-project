@@ -1,69 +1,69 @@
-## Desenvolvimento de um CRUD de pessoa;
-## Protótipo completamente funcional, publicado no Netlify:
+## Desenvolvimento de um CRUD de pessoa; 🎉
+## Protótipo completamente funcional, publicado no Netlify: 📚
 
-https://competent-lewin-9de782.netlify.app/
+https://competent-lewin-9de782.netlify.app/ ✔️
 
 ## Tentar utilizar a maior parte das tecnologias;
 
-● VueJS
-● Vue Router
-● Vuex
-● Bootstrap
-● SCSS
-● Git
+● VueJS ✔️
+● Vue Router ✔️
+● Vuex ✔️
+● Bootstrap ✔️ 
+● SCSS ✔️ 
+● Git ✔️
 
 ## Ter uma tela para listar os cadastros com paginação;
 
-"Não desenvolvi um projeto com listagem em paginação"
+"Não desenvolvi um projeto com listagem em paginação" 🚧
 
 ## Ter uma tela para cadastro/edição dos cadastros;
 
-Realizado!
+Realizado! ✔️
 
 ## Ter opção para excluir um cadastro;
 
-Realizado!
+Realizado! ✔️
 
 ## No cadastro de endereço, poder cadastrar mais de um;
 
-Honestamente, não consegui implementar essa funcionalidade.
+Honestamente, não consegui implementar essa funcionalidade. 🚨
 
 ## Aplicar validação dos campos obrigatórios nos formulários;
 
-Aplicado validação através do método "required"!
+Aplicado validação através do método "required"! ✔️
 
 ## Aplicar máscaras nos campos de CPF, CNPJ, Data, Número e CEP;
 
-Aplicado máscaras.
+Aplicado máscaras. Realizado! ✔️
 
 ## Utilizar ESLint com a configuração AIRBNB;
 
-Utilizado tecnologia especificada.
+Utilizado tecnologia especificada. ✔️
 
 ## Entregar código fonte em um repositório público (GitHub, Bitbucket, etc...)
 
-Realizado!
+Realizado! ✔️
 
-# crud-project
+# crud-project 📦
 
 ## Project setup
 ```
-npm install
+npm install 
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run serve 
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run build 
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+npm run lint 
 ```
 
 ### Customize configuration
