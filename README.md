@@ -1,7 +1,8 @@
 ## Desenvolvimento de um CRUD de pessoa; 🎉
-## Protótipo completamente funcional, publicado no Netlify: 📚
 
-https://competent-lewin-9de782.netlify.app/ ✔️
+## Protótipo completamente funcional, publicado no Netlify: 📌
+
+https://competent-lewin-9de782.netlify.app/ 🔗
 
 ## Tentar utilizar a maior parte das tecnologias;
 
