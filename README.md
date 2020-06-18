@@ -22,15 +22,15 @@ Realizado!
 
 ## Ter opção para excluir um cadastro;
 
-Realizado
+Realizado!
 
 ## No cadastro de endereço, poder cadastrar mais de um;
 
-Honestamente, não consegui implementar a funcionalidade de cadastrar mais de um endereço no mesmo usuário.
+Honestamente, não consegui implementar essa funcionalidade.
 
 ## Aplicar validação dos campos obrigatórios nos formulários;
 
-Aplicado validação através do método "required"
+Aplicado validação através do método "required"!
 
 ## Aplicar máscaras nos campos de CPF, CNPJ, Data, Número e CEP;
 
@@ -43,8 +43,6 @@ Utilizado tecnologia especificada.
 ## Entregar código fonte em um repositório público (GitHub, Bitbucket, etc...)
 
 Realizado!
-
-______________||_____________
 
 # crud-project
 
