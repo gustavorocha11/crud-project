@@ -58,7 +58,7 @@
           v-model="form.data_nascimento">
         </b-form-group>
 
-        <b-form-group label="E-mail:" class="col-12">
+          <b-form-group label="E-mail:" class="col-12">
           <b-form-input
             type="email"
             placeholder="Digite o seu E-mail"
@@ -193,6 +193,7 @@
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue';
+
 import axios from 'axios';
 import _ from 'lodash';
 
